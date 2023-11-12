@@ -1,20 +1,28 @@
+import { useNavigate } from "@tanstack/react-router";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
 type Props = {
-  name: string;
+  id: string;
+  name?: string;
 };
 
-export default function CharacterCard({ name }: Props) {
+export default function CharacterCard({ id, name }: Props) {
+  const navigate = useNavigate();
   return (
-    <Button variant="ghost" asChild className="px-0 pb-2">
+    <Button
+      onClick={() => navigate({ to: "/$id", params: { id } })}
+      variant="ghost"
+      asChild
+      className="px-0 pb-2"
+    >
       <Card className="h-45 flex w-40 cursor-pointer flex-col gap-2">
         <img
-          className="h-38 w-32"
-          src={`https://cdn-mk1.mortalkombat.com/roster/${name}/thumb.webp`}
-          alt={name}
+          className="h-full w-full"
+          src={`https://cdn-mk1.mortalkombat.com/roster/${id}/thumb.webp`}
+          alt={name ?? id}
         />
-        <span className="px-10 font-bold capitalize">{name}</span>
+        <span className="pt-2 font-bold capitalize">{name ?? id}</span>
       </Card>
     </Button>
   );

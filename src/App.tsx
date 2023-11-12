@@ -1,4 +1,3 @@
-import CharacterList from "./components/characters/CharacterList";
 import Header from "./components/layout/Header";
 import MainContent from "./components/layout/MainContent";
 import ThemeProvider from "./components/theming/ThemeProvider";
@@ -9,9 +8,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="mkfd-ui-theme">
       <div className="relative flex min-h-screen flex-col">
         <Header />
-        <MainContent>
-          <CharacterList />
-        </MainContent>
+        <MainContent />
       </div>
     </ThemeProvider>
   );
