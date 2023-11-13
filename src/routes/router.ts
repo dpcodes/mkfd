@@ -1,9 +1,18 @@
 import App from "@/App";
 import { RootRoute, Router } from "@tanstack/react-router";
-import { indexRoute } from ".";
-import { moveListRoute } from "./move-list";
-import { charactersRoute } from "./characters";
+import {
+  characterMoveListRoute,
+  charactersIndexRoute,
+  charactersRoute,
+} from "./characters";
 import { kameosRoute } from "./kameos";
+
+// Register your router for maximum type safety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 // Create a root route
 export const rootRoute = new RootRoute({
@@ -11,8 +20,7 @@ export const rootRoute = new RootRoute({
 });
 
 const routeTree = rootRoute.addChildren([
-  indexRoute,
-  charactersRoute.addChildren([moveListRoute]),
+  charactersRoute.addChildren([charactersIndexRoute, characterMoveListRoute]),
   kameosRoute,
 ]);
 
