@@ -1,7 +1,7 @@
 import App from "@/App";
 import { RootRoute, Router } from "@tanstack/react-router";
 import {
-  characterMoveListRoute,
+  characterRoute,
   charactersIndexRoute,
   charactersRoute,
 } from "./characters";
@@ -20,7 +20,7 @@ export const rootRoute = new RootRoute({
 });
 
 const routeTree = rootRoute.addChildren([
-  charactersRoute.addChildren([charactersIndexRoute, characterMoveListRoute]),
+  charactersRoute.addChildren([charactersIndexRoute, characterRoute]),
   kameosRoute,
 ]);
 

@@ -14,10 +14,10 @@ const charactersIndexRoute = new Route({
   component: CharacterList,
 });
 
-const characterMoveListRoute = new Route({
+const characterRoute = new Route({
   component: MoveList,
   getParentRoute: () => charactersRoute,
   path: "$id",
 });
 
-export { charactersRoute, charactersIndexRoute, characterMoveListRoute };
+export { charactersRoute, charactersIndexRoute, characterRoute };

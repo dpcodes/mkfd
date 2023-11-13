@@ -10,17 +10,32 @@ export default function CharacterList() {
     <section className="grid w-[850px] grid-rows-3 gap-8">
       <div className="grid grid-cols-5 gap-2">
         {block1.map((c) => (
-          <CharacterCard key={c.id} id={c.id} name={c.name} />
+          <CharacterCard
+            key={c.id}
+            id={c.id}
+            name={c.name}
+            released={c.released}
+          />
         ))}
       </div>
       <div className="grid grid-cols-5 gap-2">
         {block2.map((c) => (
-          <CharacterCard key={c.id} id={c.id} name={c.name} />
+          <CharacterCard
+            key={c.id}
+            id={c.id}
+            name={c.name}
+            released={c.released}
+          />
         ))}
       </div>
       <div className="grid grid-cols-5 gap-2">
         {block3.map((c) => (
-          <CharacterCard key={c.id} id={c.id} name={c.name} />
+          <CharacterCard
+            key={c.id}
+            id={c.id}
+            name={c.name}
+            released={c.released}
+          />
         ))}
       </div>
     </section>

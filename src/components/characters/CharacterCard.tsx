@@ -1,4 +1,4 @@
-import { characterMoveListRoute } from "@/routes/characters";
+import { characterRoute } from "@/routes/characters";
 import { useNavigate } from "@tanstack/react-router";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
@@ -6,15 +6,15 @@ import { Card } from "../ui/card";
 type Props = {
   id: string;
   name?: string;
+  released?: boolean;
 };
 
-export default function CharacterCard({ id, name }: Props) {
+export default function CharacterCard({ id, name, released }: Props) {
   const navigate = useNavigate();
   return (
     <Button
-      onClick={() =>
-        navigate({ to: characterMoveListRoute.to, params: { id } })
-      }
+      onClick={() => navigate({ to: characterRoute.to, params: { id } })}
+      disabled={released === false}
       variant="ghost"
       asChild
       className="px-0 pb-2"
